@@ -11,7 +11,7 @@ import CoreLocation
 
 struct Landmark: Codable, Identifiable {
     let name: String
-    let category: String
+//    let category: String
     let city: String
     let state: String
     let id: Int
@@ -21,6 +21,16 @@ struct Landmark: Codable, Identifiable {
     let coordinates: Coordinate
     let description: String
     let imageName: String
+    
+    
+    var category: Category
+    
+    enum Category: String, CaseIterable, Codable {
+        case lakes = "Lakes"
+        case rivers = "Rivers"
+        case mountains = "Mountains"
+    }
+    
     
     // MARK: Helper Computed Properties
     
